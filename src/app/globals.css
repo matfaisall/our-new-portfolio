@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #FFFFFF;
+  --text-color: '#161618'
+} 
+
+.dark {
+  --background-color: '#818181';
+  --text-color: '#FFFFFF';
+}
+
+
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #818181;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  /* background-color: var(--background); */
+  font-family: "Roboto", Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} 
