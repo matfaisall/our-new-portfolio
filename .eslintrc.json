@@ -1,7 +1,12 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
+  "extends": ["next/core-web-vitals", "next/typescript", "prettier", "eslint:recommended", "plugin:prettier/recommended"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "function", "next": "function" },
+      { "blankLine": "always", "prev": "block-like", "next": "*" }
+    ]
   }
 }

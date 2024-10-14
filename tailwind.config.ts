@@ -21,8 +21,8 @@ const config: Config = {
         lg: "4rem",
         xl: "5rem",
         "2xl": "6rem",
-      }
-    }
+      },
+    },
   },
   plugins: [require("daisyui")],
 };
