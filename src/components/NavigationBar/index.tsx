@@ -6,16 +6,13 @@ import {
   DownloadSimple,
 } from "@phosphor-icons/react";
 import Link from "next/link";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { INavigationBar } from "./NavigationInterface";
 
-interface INavigationBar {
-  isDarkMode: boolean;
-  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const NavigationBar = ({ isDarkMode, setIsDarkMode }: INavigationBar) => {
-  // const [isDarkMode, setIsDarkMode] = useState(false);
-
+const NavigationBar: React.FC<INavigationBar> = ({
+  isDarkMode,
+  setIsDarkMode,
+}) => {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
@@ -40,7 +37,7 @@ const NavigationBar = ({ isDarkMode, setIsDarkMode }: INavigationBar) => {
     localStorage.setItem("thame", newTheme);
   };
 
-  const handleDownloadCV = () => {
+  const handleViewCV = () => {
     const link = document.createElement("a");
     link.href = `/doc/muhammad-faisal's-cv.pdf`;
     link.target = "_blank";
@@ -63,9 +60,9 @@ const NavigationBar = ({ isDarkMode, setIsDarkMode }: INavigationBar) => {
         </div>
 
         <div className="flex flex-row gap-4 md:gap-8 items-center">
-          <button className="btn btn-neutral" onClick={handleDownloadCV}>
-            <DownloadSimple size={22} fill="white" weight="regular" />
-            <p className="text-sm text-white hidden md:block">View CV</p>
+          <button className="btn btn-active btn-ghost" onClick={handleViewCV}>
+            <DownloadSimple size={22} weight="fill" />
+            <p className="text-sm  hidden md:block">View CV</p>
           </button>
           <div onClick={toggleTheme}>
             {isDarkMode ? (
