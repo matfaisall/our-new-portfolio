@@ -6,18 +6,12 @@ interface TitleSectionProps {
   desc?: string;
 }
 
-const TitleSection: React.FC<TitleSectionProps> = ({
-  section = "",
-  title = "",
-  desc = "",
-}) => {
+const TitleSection: React.FC<TitleSectionProps> = ({ section = "", title = "", desc = "" }) => {
   return (
     <div className="my-20">
       <div className="flex flex-col gap-4 items-center">
-        <h1 className="text-xl font-semibold text-green-700 uppercase">
-          {section || ""}
-        </h1>
-        <h4 className="text-3xl font-semibold ">{title || ""}</h4>
+        <h1 className="text-xl font-bold">{section || ""}</h1>
+        <h4 className="text-3xl font-bold capitalize">{title || ""}</h4>
         <p>{desc || ""}</p>
       </div>
     </div>
