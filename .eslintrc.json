@@ -1,12 +1,18 @@
 {
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "extends": [
+    "prettier", 
+    "prettier/react",
+    "eslint:recommended", 
+    "plugin:prettier/recommended", 
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "padding-line-between-statements": [
-      "error",
-      { "blankLine": "always", "prev": "function", "next": "function" },
-      { "blankLine": "always", "prev": "block-like", "next": "*" }
-    ]
+    "no-console": "warn",
+    "no-undef": "warn",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
   }
 }
